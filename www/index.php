@@ -1,6 +1,7 @@
 <?php
   /*
     ./www/index.php
+    DISPATCHER CENTRAL
   */
 
  require_once '../noyau/init.php';
