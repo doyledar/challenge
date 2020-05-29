@@ -1,19 +1,13 @@
-<?php
-/*
-  ./app/vues/template/index.php
-*/
-
- ?>
-
- <!DOCTYPE html>
- <html lang="en">
- <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>MVC PHP de base</title>
- </head>
- <body>
-    <h1>Coucou</h1>
- </body>
- </html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <?php include_once '../app/vues/template/partials/_head.php'; ?>
+  </head>
+  <body>
+    <?php include_once '../app/vues/template/partials/_navigation.php'; ?>
+    <?php include_once '../app/vues/template/partials/_hero.php'; ?>
+    <?php include_once '../app/vues/template/partials/_main.php'; ?>
+    <?php include_once '../app/vues/template/partials/_footer.php'; ?>
+    <?php include_once '../app/vues/template/partials/_loaderScripts.php'; ?>
+  </body>
+</html>

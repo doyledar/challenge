@@ -13,4 +13,4 @@
 // INITIALISATION DES ZONES DYNAMIQUES
 
 $title   ='';
-$content = '';
+$content = 'coucou';
