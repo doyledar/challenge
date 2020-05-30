@@ -20,3 +20,16 @@
        include '../app/vues/posts/index.php';
      $content = ob_get_clean();
  }
+
+ function showAction(\PDO $connexion, int $id) {
+   // 1. On demande le produit au modèle et on le met dans $produit
+     include_once '../app/modeles/postsModele.php';
+     $post = Posts\findOneById($connexion, $id);
+
+   // 2. On charge la vue show dans $content
+     GLOBAL $title, $content;
+     $title = $post['title'];
+     ob_start();
+       include '../app/vues/posts/show.php';
+     $content = ob_get_clean();
+ }
