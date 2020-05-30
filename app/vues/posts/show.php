@@ -14,3 +14,9 @@
   <h1 class="mb-3 h1"><?php echo $post['title']; ?></h1>
 <p><?php echo $post['content']; ?></p>
 </div>
+<h2>Tags</h2>
+<?php foreach ($tags as $tag): ?>
+<div class="">
+  <p><?php echo $tag['name']; ?></p>
+</div>
+<?php endforeach; ?>

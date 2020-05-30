@@ -4,6 +4,8 @@
     ./app/routeur.php
   */
 
+
+
   //ROUTE DU DETAIL D'UN POST
   //  PATTERN: /?postID=x
   //  CTRL: postsControleur
@@ -13,6 +15,7 @@
   if (isset($_GET['postID'])):
      include_once '../app/controleurs/postsControleur.php';
      \App\Controleurs\Posts\showAction($connexion, $_GET['postID']);
+    
 
   // ROUTE PAR DEFAUT
   // LISTE DES DIX DERNIERS POSTS

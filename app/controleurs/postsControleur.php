@@ -7,6 +7,7 @@
 
  namespace App\Controleurs\Posts;
  use \App\Modeles\Posts;
+ use \App\Modeles\Tags;
 
  function indexAction(\PDO $connexion) {
    // 1. On demande les posts au modèle et on les met dans $posts
@@ -22,14 +23,20 @@
  }
 
  function showAction(\PDO $connexion, int $id) {
-   // 1. On demande le produit au modèle et on le met dans $produit
+   // 1. On demande le post et les tags au modèle et on les met dans $post et $tags
      include_once '../app/modeles/postsModele.php';
      $post = Posts\findOneById($connexion, $id);
 
+     include_once '../app/modeles/tagsModele.php';
+     $tags = Tags\indexByPostId($connexion, $id);
+
+
    // 2. On charge la vue show dans $content
      GLOBAL $title, $content;
-     $title = $post['title'];
+     $title = "Détails du post";
      ob_start();
        include '../app/vues/posts/show.php';
      $content = ob_get_clean();
+
+
  }
