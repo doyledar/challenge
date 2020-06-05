@@ -9,6 +9,7 @@
  use \App\Modeles\Posts;
  use \App\Modeles\Tags;
  use \App\Modeles\Authors;
+ use \App\Modeles\Comments;
 
  function indexAction(\PDO $connexion) {
    // 1. On demande les posts au modèle et on les met dans $posts
@@ -33,6 +34,9 @@
 
      include_once '../app/modeles/authorsModele.php';
      $author = Authors\findOneById($connexion, $id);
+
+     include_once '../app/modeles/commentsModele.php';
+     $comments = Comments\indexByPostId($connexion, $id);
 
 
 
