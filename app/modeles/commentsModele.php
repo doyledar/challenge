@@ -14,3 +14,17 @@ function indexByPostId(\PDO $connexion, int $id){
     $rs->execute();
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }
+
+function addAction(\PDO $connexion){
+  $sql = " INSERT INTO comments
+         SET pseudo  = :pseudo,
+             content = :content,
+             post_id = :post_id,
+        .    created_at = NOW() ;";
+  $envoi = $connexion->prepare($sql);
+  $envoi->bindValue(':pseudo', $_POST['pseudo'], \PDO::PARAM_STR);
+  $envoi->bindValue(':content', $_POST['content'], \PDO::PARAM_STR);
+  $envoi->bindValue(':post_id', $_POST['post_id'], \PDO::PARAM_INT);
+  $envoi->execute();
+  return($envoi);
+}

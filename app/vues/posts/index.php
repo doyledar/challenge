@@ -26,8 +26,7 @@
           <?php echo $post['title']; ?>
         </a>
       </h3>
-      <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-      <p><a href="?postID=<?php echo $post['id']; ?>" class="btn-custom"><span class="ion-ios-arrow-round-forward mr-3"></span>Read more</a></p>
+          <p><a href="?postID=<?php echo $post['id']; ?>" class="btn-custom"><span class="ion-ios-arrow-round-forward mr-3"></span>Read more</a></p>
     </div>
   </div>
   <?php endforeach; ?>
