@@ -6,7 +6,7 @@
  */
 
 namespace App\Controleurs\Comments;
- use \App\Modeles\Comments;
+use \App\Modeles\Comments;
 
 function addAction(\PDO $connexion){
   /* Va ajouter le commentaire dans la db */

@@ -9,7 +9,7 @@
 <h2><?php echo $title ?></h2>
   <?php foreach ($posts as $post): ?>
   <div class="blog-entry justify-content-end">
-    <a href="article.html" class="block-20" style="background-image: url('images/<?php echo $post['image'];?>');">
+    <a href="?postID=<?php echo $post['id']; ?>" class="block-20" style="background-image: url('images/<?php echo $post['image'];?>');">
     </a>
     <div class="text p-4 float-right d-block">
     	<div class="topper d-flex align-items-center">

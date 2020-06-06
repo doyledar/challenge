@@ -24,13 +24,14 @@
      $content = ob_get_clean();
  }
 
+
  function showAction(\PDO $connexion, int $id) {
    // 1. On demande le post et les tags au modèle et on les met dans $post et $tags
      include_once '../app/modeles/postsModele.php';
      $post = Posts\findOneById($connexion, $id);
 
      include_once '../app/modeles/tagsModele.php';
-     $tags = Tags\indexByPostId($connexion, $id);
+     $tags = Tags\indexByTagId($connexion, $id);
 
      include_once '../app/modeles/authorsModele.php';
      $author = Authors\findOneById($connexion, $id);
@@ -48,4 +49,12 @@
      $content = ob_get_clean();
 
 
+ }
+
+
+ function latestIndex(\PDO $connexion) {
+   // 1. On demande les posts au modèle et on les met dans $posts
+     include_once '../app/modeles/postsModele.php';
+     $latestPosts = Posts\latestIndex($connexion);
+     include_once '../app/vues/posts/latest.php';
  }

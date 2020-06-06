@@ -5,7 +5,7 @@
  */
 namespace App\Modeles\Tags;
 
-function indexByPostId(\PDO $connexion, int $id){
+function indexByTagId(\PDO $connexion, int $id){
     $sql = "SELECT *
             FROM tags t
             JOIN posts_has_tags pt
@@ -16,4 +16,12 @@ function indexByPostId(\PDO $connexion, int $id){
     $rs->bindValue(':id', $id, \PDO::PARAM_INT);
     $rs->execute();
     return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}
+
+function findAll(\PDO $connexion){
+  $sql = "SELECT *
+          FROM tags;";
+  $rs = $connexion->query($sql);
+  // Tableau indexé de tableaux associatifs
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
 }

@@ -24,3 +24,13 @@ function findOneById(\PDO $connexion, int $id) {
   $rs->execute();
   return $rs->fetch(\PDO::FETCH_ASSOC); // Tableau associatif
 }
+
+function latestIndex(\PDO $connexion) {
+  $sql = "SELECT id, title, image, resume, DAYOFMONTH(created_at) as jour, MONTH(created_at) as mois, YEAR(created_at) as annee
+          FROM posts
+          ORDER BY created_at DESC
+          LIMIT 3;";
+  $rs = $connexion->query($sql);
+  // Tableau indexé de tableaux associatifs
+  return $rs->fetchAll(\PDO::FETCH_ASSOC);
+}

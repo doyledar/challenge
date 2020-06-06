@@ -18,21 +18,6 @@
       include '../app/vues/template/partials/_contact.php';
     $content = ob_get_clean();
 
-
-
-/*
-  //  ROUTE DE RECEPTION DU FORMULAIRE COMMENTAIRES
-  //  PATTERN: /?comment=add
-  //  CTRL: commentControleur
-  //  ACTION: show
-  //  Image + title + content
-
-  if (isset($_POST['comment'])):
-     include_once '../app/controleurs/commentsControleur.php';
-     \App\Controleurs\Comments\addAction($connexion);
-*/
-
-
   //ROUTE DU DETAIL D'UN POST
   //  PATTERN: /?postID=x
   //  CTRL: postsControleur
@@ -43,8 +28,6 @@
      include_once '../app/controleurs/postsControleur.php';
      \App\Controleurs\Posts\showAction($connexion, $_GET['postID']);
 
-
-
   // ROUTE PAR DEFAUT
   // LISTE DES DIX DERNIERS POSTS
   // PATTERN :/
@@ -53,4 +36,5 @@
   else:
     include_once '../app/controleurs/postsControleur.php';
     \App\Controleurs\Posts\indexAction($connexion);
+
   endif;
